@@ -398,12 +398,43 @@ beef.browser = {
     },
 
     /**
+     * Returns true if FF38
+     * @example: beef.browser.isFF38()
+     */
+    isFF38: function () {
+        return !!window.devicePixelRatio && !!window.history.replaceState && typeof navigator.mozGetUserMedia != "undefined" && (typeof window.crypto != "undefined" && typeof window.crypto.getRandomValues != "undefined") && typeof Math.hypot == 'function' && typeof String.prototype.codePointAt === 'function' && typeof Number.isSafeInteger === 'function' && window.navigator.userAgent.match(/Firefox\/38./) != null;
+    },
+
+    /**
+     * Returns true if FF39
+     * @example: beef.browser.isFF39()
+     */
+    isFF39: function () {
+        return !!window.devicePixelRatio && !!window.history.replaceState && typeof navigator.mozGetUserMedia != "undefined" && (typeof window.crypto != "undefined" && typeof window.crypto.getRandomValues != "undefined") && typeof Math.hypot == 'function' && typeof String.prototype.codePointAt === 'function' && typeof Number.isSafeInteger === 'function' && window.navigator.userAgent.match(/Firefox\/39./) != null;
+    },
+
+    /**
+     * Returns true if FF40
+     * @example: beef.browser.isFF40()
+     */
+    isFF40: function () {
+        return !!window.devicePixelRatio && !!window.history.replaceState && typeof navigator.mozGetUserMedia != "undefined" && (typeof window.crypto != "undefined" && typeof window.crypto.getRandomValues != "undefined") && typeof Math.hypot == 'function' && typeof String.prototype.codePointAt === 'function' && typeof Number.isSafeInteger === 'function' && window.navigator.userAgent.match(/Firefox\/40./) != null;
+    },
+
+    /**
+     * Returns true if FF41
+     * @example: beef.browser.isFF41()
+     */
+    isFF41: function () {
+        return !!window.devicePixelRatio && !!window.history.replaceState && typeof navigator.mozGetUserMedia != "undefined" && (typeof window.crypto != "undefined" && typeof window.crypto.getRandomValues != "undefined") && typeof Math.hypot == 'function' && typeof String.prototype.codePointAt === 'function' && typeof Number.isSafeInteger === 'function' && window.navigator.userAgent.match(/Firefox\/41./) != null;
+    },
+
+    /**
      * Returns true if FF.
      * @example: beef.browser.isFF()
      */
     isFF: function () {
-        return this.isFF2() || this.isFF3() || this.isFF3_5() || this.isFF3_6() || this.isFF4() || this.isFF5() || this.isFF6() || this.isFF7() || this.isFF8() || this.isFF9() || this.isFF10() || this.isFF11() || this.isFF12() || this.isFF13() || this.isFF14() || this.isFF15() || this.isFF16() || this.isFF17() || this.isFF18() || this.isFF19() || this.isFF20() || this.isFF21() || this.isFF22() || this.isFF23() || this.isFF24() || this.isFF25() || this.isFF26() || this.isFF27() || this.isFF28() || this.isFF29() || this.isFF30() || this.isFF31() || this.isFF32() || this.isFF33() || this.isFF34() || this.isFF35() || this.isFF36() || this.isFF37();
-
+        return this.isFF2() || this.isFF3() || this.isFF3_5() || this.isFF3_6() || this.isFF4() || this.isFF5() || this.isFF6() || this.isFF7() || this.isFF8() || this.isFF9() || this.isFF10() || this.isFF11() || this.isFF12() || this.isFF13() || this.isFF14() || this.isFF15() || this.isFF16() || this.isFF17() || this.isFF18() || this.isFF19() || this.isFF20() || this.isFF21() || this.isFF22() || this.isFF23() || this.isFF24() || this.isFF25() || this.isFF26() || this.isFF27() || this.isFF28() || this.isFF29() || this.isFF30() || this.isFF31() || this.isFF32() || this.isFF33() || this.isFF34() || this.isFF35() || this.isFF36() || this.isFF37() || this.isFF38() || this.isFF39() || this.isFF40() || this.isFF41();
     },
 
     /**
@@ -935,11 +966,83 @@ beef.browser = {
     },
 
     /**
+     * Returns true if Chrome 42.
+     * @example: beef.browser.isC42()
+     */
+    isC42: function () {
+        return (!!window.chrome && !!window.fetch && !window.webkitPerformance && window.navigator.appVersion.match(/Chrome\/(\d+)\./)) && ((parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10) == 42) ? true : false);
+    },
+
+    /**
+     * Returns true if Chrome for iOS 42.
+     * @example: beef.browser.isC42iOS()
+     */
+    isC42iOS: function () {
+        return (!window.webkitPerformance && window.navigator.appVersion.match(/CriOS\/(\d+)\./)) && ((parseInt(window.navigator.appVersion.match(/CriOS\/(\d+)\./)[1], 10) == 42) ? true : false);
+    },
+
+    /**
+     * Returns true if Chrome 43.
+     * @example: beef.browser.isC43()
+     */
+    isC43: function () {
+        return (!!window.chrome && !!window.fetch && !window.webkitPerformance && window.navigator.appVersion.match(/Chrome\/(\d+)\./)) && ((parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10) == 43) ? true : false);
+    },
+
+    /**
+     * Returns true if Chrome for iOS 43.
+     * @example: beef.browser.isC43iOS()
+     */
+    isC43iOS: function () {
+        return (!window.webkitPerformance && window.navigator.appVersion.match(/CriOS\/(\d+)\./)) && ((parseInt(window.navigator.appVersion.match(/CriOS\/(\d+)\./)[1], 10) == 43) ? true : false);
+    },
+
+    /**
+     * Returns true if Chrome 44.
+     * @example: beef.browser.isC44()
+     */
+    isC44: function () {
+        return (!!window.chrome && !!window.fetch && !window.webkitPerformance && window.navigator.appVersion.match(/Chrome\/(\d+)\./)) && ((parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10) == 44) ? true : false);
+    },
+
+    /**
+     * Returns true if Chrome for iOS 44.
+     * @example: beef.browser.isC44iOS()
+     */
+    isC44iOS: function () {
+        return (!window.webkitPerformance && window.navigator.appVersion.match(/CriOS\/(\d+)\./)) && ((parseInt(window.navigator.appVersion.match(/CriOS\/(\d+)\./)[1], 10) == 44) ? true : false);
+    },
+
+    /**
+     * Returns true if Chrome 45.
+     * @example: beef.browser.isC45()
+     */
+    isC45: function () {
+        return (!!window.chrome && !!window.fetch && !window.webkitPerformance && window.navigator.appVersion.match(/Chrome\/(\d+)\./)) && ((parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10) == 45) ? true : false);
+    },
+
+    /**
+     * Returns true if Chrome 46.
+     * @example: beef.browser.isC46()
+     */
+    isC46: function () {
+        return (!!window.chrome && !!window.fetch && !window.webkitPerformance && window.navigator.appVersion.match(/Chrome\/(\d+)\./)) && ((parseInt(window.navigator.appVersion.match(/Chrome\/(\d+)\./)[1], 10) == 46) ? true : false);
+    },
+
+    /**
+     * Returns true if Chrome for iOS 45.
+     * @example: beef.browser.isC45iOS()
+     */
+    isC45iOS: function () {
+        return (!window.webkitPerformance && window.navigator.appVersion.match(/CriOS\/(\d+)\./)) && ((parseInt(window.navigator.appVersion.match(/CriOS\/(\d+)\./)[1], 10) == 45) ? true : false);
+    },
+
+    /**
      * Returns true if Chrome.
      * @example: beef.browser.isC()
      */
     isC: function () {
-        return this.isC5() || this.isC6() || this.isC7() || this.isC8() || this.isC9() || this.isC10() || this.isC11() || this.isC12() || this.isC13() || this.isC14() || this.isC15() || this.isC16() || this.isC17() || this.isC18() || this.isC19() || this.isC19iOS() || this.isC20() || this.isC20iOS() || this.isC21() || this.isC21iOS() || this.isC22() || this.isC22iOS() || this.isC23() || this.isC23iOS() || this.isC24() || this.isC24iOS() || this.isC25() || this.isC25iOS() || this.isC26() || this.isC26iOS() || this.isC27() || this.isC27iOS() || this.isC28() || this.isC28iOS() || this.isC29() || this.isC29iOS() || this.isC30() || this.isC30iOS() || this.isC31() || this.isC31iOS() || this.isC32() || this.isC32iOS() || this.isC33() || this.isC33iOS() || this.isC34() || this.isC34iOS() || this.isC35() || this.isC35iOS() || this.isC36() || this.isC36iOS() || this.isC37() || this.isC37iOS() || this.isC38() || this.isC38iOS() || this.isC39() || this.isC39iOS() || this.isC40() || this.isC40iOS() || this.isC41() || this.isC41iOS();
+        return this.isC5() || this.isC6() || this.isC7() || this.isC8() || this.isC9() || this.isC10() || this.isC11() || this.isC12() || this.isC13() || this.isC14() || this.isC15() || this.isC16() || this.isC17() || this.isC18() || this.isC19() || this.isC19iOS() || this.isC20() || this.isC20iOS() || this.isC21() || this.isC21iOS() || this.isC22() || this.isC22iOS() || this.isC23() || this.isC23iOS() || this.isC24() || this.isC24iOS() || this.isC25() || this.isC25iOS() || this.isC26() || this.isC26iOS() || this.isC27() || this.isC27iOS() || this.isC28() || this.isC28iOS() || this.isC29() || this.isC29iOS() || this.isC30() || this.isC30iOS() || this.isC31() || this.isC31iOS() || this.isC32() || this.isC32iOS() || this.isC33() || this.isC33iOS() || this.isC34() || this.isC34iOS() || this.isC35() || this.isC35iOS() || this.isC36() || this.isC36iOS() || this.isC37() || this.isC37iOS() || this.isC38() || this.isC38iOS() || this.isC39() || this.isC39iOS() || this.isC40() || this.isC40iOS() || this.isC41() || this.isC41iOS() || this.isC42() || this.isC42iOS() || this.isC43() || this.isC43iOS() || this.isC44() || this.isC44iOS() || this.isC45() || this.isC46() || this.isC45iOS();
     },
 
     /**
@@ -1072,6 +1175,15 @@ beef.browser = {
             C40iOS: this.isC40iOS(), // Chrome 40 on iOS
             C41: this.isC41(), // Chrome 41
             C41iOS: this.isC41iOS(), // Chrome 41 on iOS
+            C42: this.isC42(), // Chrome 42
+            C42iOS: this.isC42iOS(), // Chrome 42 on iOS
+            C43: this.isC43(), // Chrome 43
+            C43iOS: this.isC43iOS(), // Chrome 43 on iOS
+            C44: this.isC44(), // Chrome 44
+            C44iOS: this.isC44iOS(), // Chrome 44 on iOS
+            C45: this.isC45(), // Chrome 45
+            C46: this.isC46(), // Chrome 46
+            C45iOS: this.isC45iOS(), // Chrome 45 on iOS
 
             C: this.isC(), // Chrome any version
 
@@ -1113,6 +1225,10 @@ beef.browser = {
             FF35: this.isFF35(), // Firefox 35
             FF36: this.isFF36(), // Firefox 36
             FF37: this.isFF37(), // Firefox 37
+            FF38: this.isFF38(), // Firefox 38
+            FF39: this.isFF39(), // Firefox 39
+            FF40: this.isFF40(), // Firefox 40
+            FF41: this.isFF41(), // Firefox 41
             FF: this.isFF(),   // Firefox any version
 
             IE6: this.isIE6(), // Internet Explorer 6
@@ -1387,6 +1503,42 @@ beef.browser = {
             return '41'
         }
         ;   // Chrome 41 for iOS
+        if (this.isC42()) {
+            return '42'
+        }
+        ;   // Chrome 42
+        if (this.isC42iOS()) {
+            return '42'
+        }
+        ;   // Chrome 42 for iOS
+        if (this.isC43()) {
+            return '43'
+        }
+        ;   // Chrome 43
+        if (this.isC43iOS()) {
+            return '43'
+        }
+        ;   // Chrome 43 for iOS
+        if (this.isC44()) {
+            return '44'
+        }
+        ;   // Chrome 44
+        if (this.isC44iOS()) {
+            return '44'
+        }
+        ;   // Chrome 44 for iOS
+        if (this.isC45()) {
+            return '45'
+        }
+        ;   // Chrome 45
+        if (this.isC46()) {
+            return '46'
+        }
+        ;   // Chrome 46
+        if (this.isC45iOS()) {
+            return '45'
+        }
+        ;   // Chrome 45 for iOS
 
         if (this.isFF2()) {
             return '2'
@@ -1540,6 +1692,22 @@ beef.browser = {
             return '37'
         }
         ;   // Firefox 37
+        if (this.isFF38()) {
+            return '38'
+        }
+        ;   // Firefox 38
+        if (this.isFF39()) {
+            return '39'
+        }
+        ;   // Firefox 39
+        if (this.isFF40()) {
+            return '40'
+        }
+        ;   // Firefox 40
+        if (this.isFF41()) {
+            return '41'
+        }
+        ;   // Firefox 41
 
         if (this.isIE6()) {
             return '6'
@@ -1861,13 +2029,8 @@ beef.browser = {
      * @example: if(beef.browser.javaEnabled()) { ... }
      */
     javaEnabled: function () {
-        //Use of deployJava defined in deployJava.js (Oracle java deployment toolkit)
-        // versionJRE = deployJava.getJREs();
 
-        // if(versionJRE != '')
-        //     return true;
-        //  else
-        return false;
+        return navigator.javaEnabled();
 
     },
 
@@ -1911,9 +2074,11 @@ beef.browser = {
      * @example: if(beef.browser.hasJava()) { ... }
      */
     hasJava: function () {
-
-        return beef.browser.javaEnabled();
-
+        if (beef.browser.getPlugins().match(/java/i) && beef.browser.javaEnabled()) {
+          return true;
+        } else {
+          return false;
+        }
     },
 
     /**
@@ -2061,16 +2226,6 @@ beef.browser = {
                         try {
                             version = navigator.plugins['Google Earth Plugin']["description"];
                             return 'Google Earth Plugin Version ' + version;//+ " description "+ filename;
-                        }
-                        catch (e) {
-                        }
-                    }},
-                'Silverlight_Plug-In': {
-                    'control': 'Silverlight Plug-In',
-                    'return': function (control) {
-                        try {
-                            version = navigator.plugins['Silverlight Plug-In']["description"];
-                            return 'Silverlight Plug-In Version ' + version;//+ " description "+ filename;
                         }
                         catch (e) {
                         }
@@ -2244,6 +2399,7 @@ beef.browser = {
         var browser_plugins = beef.browser.getPlugins();
         var date_stamp = new Date().toString();
         var os_name = beef.os.getName();
+        var os_version = beef.os.getVersion();
         var default_browser = beef.os.getDefaultBrowser();
         var hw_name = beef.hardware.getName();
         var cpu_type = beef.hardware.cpuType();
@@ -2261,14 +2417,14 @@ beef.browser = {
         var has_web_socket = (beef.browser.hasWebSocket()) ? "Yes" : "No";
         var has_webrtc = (beef.browser.hasWebRTC()) ? "Yes" : "No";
         var has_activex = (beef.browser.hasActiveX()) ? "Yes" : "No";
-        var has_silverlight = (beef.browser.hasSilverlight()) ? "Yes" : "No";
         var has_quicktime = (beef.browser.hasQuickTime()) ? "Yes" : "No";
         var has_realplayer = (beef.browser.hasRealPlayer()) ? "Yes" : "No";
         var has_wmp = (beef.browser.hasWMP()) ? "Yes" : "No";
         try {
             var cookies = document.cookie;
-            var has_session_cookies = (beef.browser.cookie.hasSessionCookies("cookie")) ? "Yes" : "No";
-            var has_persistent_cookies = (beef.browser.cookie.hasPersistentCookies("cookie")) ? "Yes" : "No";
+            var veglol = beef.browser.cookie.veganLol();
+            var has_session_cookies = (beef.browser.cookie.hasSessionCookies(veglol)) ? "Yes" : "No";
+            var has_persistent_cookies = (beef.browser.cookie.hasPersistentCookies(veglol)) ? "Yes" : "No";
             if (cookies) details['Cookies'] = cookies;
             if (has_session_cookies) details['hasSessionCookies'] = has_session_cookies;
             if (has_persistent_cookies) details['hasPersistentCookies'] = has_persistent_cookies;
@@ -2291,6 +2447,7 @@ beef.browser = {
         if (hostport) details['HostPort'] = hostport;
         if (browser_plugins) details['BrowserPlugins'] = browser_plugins;
         if (os_name) details['OsName'] = os_name;
+        if (os_version) details['OsVersion'] = os_version;
         if (default_browser) details['DefaultBrowser'] = default_browser;
         if (hw_name) details['Hardware'] = hw_name;
         if (cpu_type) details['CPU'] = cpu_type;
@@ -2307,7 +2464,6 @@ beef.browser = {
         if (has_googlegears) details['HasGoogleGears'] = has_googlegears;
         if (has_webrtc) details['HasWebRTC'] = has_webrtc;
         if (has_activex) details['HasActiveX'] = has_activex;
-        if (has_silverlight) details['HasSilverlight'] = has_silverlight;
         if (has_quicktime) details['HasQuickTime'] = has_quicktime;
         if (has_realplayer) details['HasRealPlayer'] = has_realplayer;
         if (has_wmp) details['HasWMP'] = has_wmp;

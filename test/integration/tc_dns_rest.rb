@@ -4,7 +4,7 @@
 # See the file 'doc/COPYING' for copying permission
 #
 require 'test/unit'
-require 'rest_client'
+require 'rest-client'
 require 'json'
 require '../common/test_constants'
 
@@ -381,8 +381,7 @@ class TC_DnsRest < Test::Unit::TestCase
     address = @@config.get('beef.extension.dns.address')
     port = @@config.get('beef.extension.dns.port')
 
-    #TODO antisnatchor: dangerous, replace with IO.open([param_array]) as in web_cloner.rb
-    dig_output = `dig @#{address} -p #{port} -t #{type} #{pattern}`
+    dig_output = IO.popen(["dig", "@#{address}", "-p", "#{port}", "-t", "#{type}", "#{pattern}"], 'r+').read
     assert_match(regex, dig_output)
   end
 
